@@ -2,7 +2,7 @@
 
 Agent dla Claude Code, który automatycznie zbiera najlepsze materiały wideo z YouTube na wybrany temat, buduje z nich bazę wiedzy w NotebookLM i zapisuje notatki w Obsidian — tworząc osobistą bibliotekę wiedzy gotową do odpytywania i nauki.
 
-**Przykład użycia:** zbierz 10 materiałów o strategiach marketingowych → zapytaj NotebookLM „Jakie są najskuteczniejsze strategie pozyskiwania klientów w 2024?" → przeglądaj połączone notatki i ucz się z flashcards w Obsidian.
+**Przykład użycia:** zbierz 10 materiałów o strategiach marketingowych → zapytaj NotebookLM „Jakie są najskuteczniejsze strategie pozyskiwania klientów w 2026?" → przeglądaj połączone notatki i ucz się z flashcards w Obsidian.
 
 ---
 
@@ -85,7 +85,7 @@ Agent przeprowadzi Cię przez wszystkie kroki: instalację bibliotek, logowanie 
 Ty:    /research
 Agent: Czego będziemy szukać?
 Ty:    strategie marketingu w social media
-Agent: Znalazłem 10 wideo. Tworzę notatnik "strategie marketingu – 2024-04-07"...
+Agent: Znalazłem 10 wideo. Tworzę notatnik "strategie marketingu – 2026-04-07"...
        [1/10] ✓ "Social Media Strategy 2026" – Neil Patel
        [2/10] ✓ "Content Marketing Masterclass" – HubSpot
        ...
@@ -135,7 +135,7 @@ vault/
     └── strategie marketingu/
         ├── _MOC.md              ← mapa tematu, linki do wszystkich wideo
         ├── _Flashcards.md       ← karty do nauki (plugin Spaced Repetition)
-        ├── Social Media Strategy 2024.md
+        ├── Social Media Strategy 2026.md
         ├── Content Marketing Masterclass.md
         └── ...
 ```
