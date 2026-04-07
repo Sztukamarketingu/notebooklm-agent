@@ -15,6 +15,7 @@ Informuj użytkownika o dostępnych komendach gdy są przydatne:
 
 - `/setup` — pierwsza konfiguracja, instalacja narzędzi
 - `/research` — pełny workflow: szukaj wideo → buduj notatnik → gotowe do pytań
+- `/compare` — zbierz wideo od dwóch twórców i porównaj ich perspektywy w jednym notatniku
 - `/youtube-search` — sama wyszukiwarka YouTube (podgląd wyników)
 - `/create-notebook` — stwórz nowy notatnik w NotebookLM
 - `/add-to-notebook` — dodaj wideo do istniejącego notatnika

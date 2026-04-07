@@ -71,6 +71,7 @@ Agent przeprowadzi Cię przez wszystkie kroki: instalację bibliotek, logowanie 
 |---|---|
 | `/setup` | Pierwsza konfiguracja — instalacja wszystkiego |
 | `/research` | Pełny workflow: YouTube → NotebookLM → Obsidian |
+| `/compare` | Porównaj dwóch twórców — debata perspektyw w jednym notatniku |
 | `/youtube-search` | Wyszukaj wideo i podejrzyj wyniki |
 | `/create-notebook` | Stwórz nowy notatnik w NotebookLM |
 | `/add-to-notebook` | Dodaj wideo do istniejącego notatnika |
@@ -98,6 +99,29 @@ Agent: Tworzę notatki w vault...
        ✓ _MOC.md (mapa tematu z linkami)
        ✓ _Flashcards.md (gotowe do nauki w Obsidian)
 ```
+
+---
+
+## Porównanie perspektyw — `/compare`
+
+Chcesz wiedzieć jak dany temat widzi ekspert A, a jak ekspert B? Komenda `/compare` zbiera wideo od dwóch twórców, wrzuca je do jednego notatnika NotebookLM i generuje gotowe pytania do debaty.
+
+```
+Ty:    /compare
+Agent: Na jaki temat? I którzy dwaj twórcy?
+Ty:    strategie reklamowe — Neil Patel i Gary Vaynerchuk
+Agent: Szukam wideo Neil Patel o strategiach reklamowych... (5 wideo)
+       Szukam wideo Gary Vaynerchuk o strategiach reklamowych... (5 wideo)
+       Tworzę notatnik "Neil Patel vs Gary Vaynerchuk: strategie reklamowe"...
+       Dodaję 10 wideo...
+
+       Gotowe! Przykładowe pytania do NotebookLM:
+       → "Jak Neil Patel i Gary Vaynerchuk różnią się w podejściu do Facebook Ads?"
+       → "Gdyby obaj doradzali mojej firmie, na co by się zgodzili?"
+       → "Jaką strategię poleciłby Neil Patel dla e-commerce?"
+```
+
+W Obsidian tworzy się notatka z sekcjami: **Perspektywa A**, **Perspektywa B**, **Punkty sporu**, **Punkty zgody** i **Mój wniosek** — gotowa do własnych przemyśleń.
 
 ---
 
