@@ -1,0 +1,6 @@
+config/credentials/
+*.session
+*.cookie
+__pycache__/
+*.pyc
+.env

@@ -1,0 +1,4 @@
+notebooklm-py[browser]>=0.1.0
+playwright>=1.40.0
+youtube-search-python>=1.6.6
+pyyaml>=6.0
