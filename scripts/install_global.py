@@ -9,15 +9,33 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
 COMMANDS_SRC = PROJECT_ROOT / ".claude" / "commands"
-GLOBAL_COMMANDS = Path.home() / ".claude" / "commands"
+CLAUDE_MD_SRC = PROJECT_ROOT / ".claude" / "CLAUDE.md"
+GLOBAL_CLAUDE = Path.home() / ".claude"
+GLOBAL_COMMANDS = GLOBAL_CLAUDE / "commands"
 SCRIPTS_SRC = PROJECT_ROOT / "scripts"
-GLOBAL_SCRIPTS = Path.home() / ".claude" / "notebooklm-scripts"
-SETTINGS_FILE = Path.home() / ".claude" / "notebooklm_config.json"
+GLOBAL_SCRIPTS = GLOBAL_CLAUDE / "notebooklm-scripts"
+SETTINGS_FILE = GLOBAL_CLAUDE / "notebooklm_config.json"
 
 
 def main():
-    # Utwórz globalny folder komend jeśli nie istnieje
+    # Utwórz globalne foldery
     GLOBAL_COMMANDS.mkdir(parents=True, exist_ok=True)
+
+    # Skopiuj CLAUDE.md globalnie (persona agenta działa wszędzie)
+    global_claude_md = GLOBAL_CLAUDE / "CLAUDE.md"
+    if global_claude_md.exists():
+        # Nie nadpisuj jeśli użytkownik ma własny CLAUDE.md — dołącz na końcu
+        existing = global_claude_md.read_text(encoding="utf-8")
+        agent_md = CLAUDE_MD_SRC.read_text(encoding="utf-8")
+        marker = "# NotebookLM YouTube Research Agent"
+        if marker not in existing:
+            global_claude_md.write_text(existing + "\n\n---\n\n" + agent_md, encoding="utf-8")
+            print(f"  ✓ CLAUDE.md → dołączono do istniejącego {global_claude_md}")
+        else:
+            print(f"  ✓ CLAUDE.md → już zainstalowany, pomijam")
+    else:
+        shutil.copy2(CLAUDE_MD_SRC, global_claude_md)
+        print(f"  ✓ CLAUDE.md → {global_claude_md}")
 
     # Skopiuj wszystkie pliki .md z komendami
     copied = []
