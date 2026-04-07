@@ -1,8 +1,8 @@
 # NotebookLM YouTube Research Agent
 
-Automatycznie zbiera najlepsze materiały wideo z YouTube na wybrany temat i buduje z nich bazę wiedzy w NotebookLM, którą możesz odpytywać.
+Automatycznie zbiera najlepsze materiały wideo z YouTube na wybrany temat, buduje bazę wiedzy w NotebookLM i zapisuje notatki w Obsidian — tworząc osobistą bibliotekę wiedzy gotową do odpytywania i nauki.
 
-**Przykład użycia:** zbierz 10 najlepszych materiałów o strategiach marketingowych → zapytaj „Jakie są najskuteczniejsze strategie pozyskiwania klientów?"
+**Przykład użycia:** zbierz 10 materiałów o strategiach marketingowych → zapytaj NotebookLM „Jakie są najskuteczniejsze strategie pozyskiwania klientów?" → przeglądaj notatki i flashcards w Obsidian
 
 ---
 
@@ -11,6 +11,7 @@ Automatycznie zbiera najlepsze materiały wideo z YouTube na wybrany temat i bud
 - [Claude Code](https://claude.ai/download) (bezpłatny)
 - [Python 3.9+](https://www.python.org/downloads/)
 - Konto Google (do NotebookLM)
+- [Obsidian](https://obsidian.md) — bezpłatny, opcjonalny (do notatek i nauki)
 
 ---
 
@@ -48,20 +49,24 @@ Po konfiguracji masz do dyspozycji komendy:
 
 | Komenda | Co robi |
 |---|---|
-| `/research` | Pełny workflow: szukaj → buduj notatnik → gotowe |
+| `/research` | Pełny workflow: szukaj → notatnik → Obsidian |
 | `/youtube-search` | Wyszukaj wideo (podgląd bez dodawania) |
 | `/create-notebook` | Stwórz nowy notatnik w NotebookLM |
 | `/add-to-notebook` | Dodaj wideo do istniejącego notatnika |
+| `/obsidian` | Eksportuj notatki do Obsidian + flashcards do nauki |
 
 ### Przykładowa sesja
 
 ```
-Ty: /research
+Ty:    /research
 Agent: Czego będziemy szukać?
-Ty: strategie marketingu w social media
+Ty:    strategie marketingu w social media
 Agent: [wyszukuje 10 wideo, tworzy notatnik, dodaje źródła]
-Agent: Gotowe! Twój notatnik jest na notebooklm.google.com
-       Możesz zapytać np. "Jakie błędy najczęściej popełniają marki na Instagramie?"
+Agent: Gotowe! Twój notatnik: notebooklm.google.com
+       Przykładowe pytania: "Jakie błędy popełniają marki na Instagramie?"
+       Czy chcesz zapisać materiały w Obsidian?
+Ty:    tak
+Agent: [tworzy notatki w vault + flashcards do nauki]
 ```
 
 ---
@@ -77,11 +82,12 @@ Agent: Gotowe! Twój notatnik jest na notebooklm.google.com
     youtube-search.md
     create-notebook.md
     add-to-notebook.md
-scripts/                 # Skrypty pomocnicze
+    obsidian.md
+scripts/                 # Skrypty pomocnicze Python
 config/
-  settings.yaml          # Stan i konfiguracja
-notebooks/               # Metadane notatników
-transcripts/             # Lokalne wyniki
+  settings.yaml          # Stan i konfiguracja (vault path, notebook id…)
+notebooks/               # Metadane notatników NotebookLM
+transcripts/             # Lokalne kopie wyników sesji
 requirements.txt
 ```
 

@@ -40,14 +40,32 @@ python3 scripts/add_to_notebook.py --notebook-id "$NOTEBOOK_ID" --urls "$URLS"
 
 Pokazuj postęp dla każdego wideo.
 
-### 6. Podsumowanie
+### 6. Zapisz wyniki lokalnie
+
+```
+python3 scripts/save_transcripts.py --topic "$TOPIC" --videos "$VIDEOS_JSON"
+```
+
+### 7. Obsidian (zapytaj użytkownika)
+
+Zapytaj:
+> Czy chcesz zapisać te materiały w Obsidian? Obsidian to darmowa aplikacja do notatek, która z czasem buduje Twoją osobistą bazę wiedzy z grafem powiązań między tematami. Możesz też tworzyć karty do nauki (flashcards).
+>
+> (tak / nie / nie mam Obsidian)
+
+- Jeśli **tak** — uruchom `/obsidian` z aktualnym tematem
+- Jeśli **nie mam Obsidian** — powiedz że można pobrać bezpłatnie z obsidian.md i wrócić później komendą `/obsidian`
+- Jeśli **nie** — pomiń
+
+### 8. Podsumowanie końcowe
 
 Po zakończeniu pokaż:
-- Nazwa notatnika
+- Nazwa notatnika w NotebookLM
 - Ile wideo dodano
 - Link: https://notebooklm.google.com
+- (jeśli Obsidian) ścieżka do notatek w vault
 
-Oraz zasugeruj przykładowe pytania które użytkownik może zadać w NotebookLM, dopasowane do tematu. Na przykład dla marketingu:
+Zasugeruj przykładowe pytania dopasowane do tematu. Dla marketingu:
 - "Jakie są najskuteczniejsze strategie pozyskiwania klientów w 2024?"
 - "Porównaj podejście do content marketingu z różnych materiałów"
 - "Jakie błędy w reklamach Facebook najczęściej popełniają małe firmy?"
