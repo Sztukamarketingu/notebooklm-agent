@@ -57,7 +57,29 @@ Uruchom:
 python3 scripts/login.py
 ```
 
-## KROK 6 — Zainstaluj skill Obsidian
+## KROK 6 — Zainstaluj skill NotebookLM
+
+Poinformuj użytkownika:
+> Teraz zainstalujemy skill, który daje Claude Code bezpośredni dostęp do NotebookLM.
+
+Spróbuj najpierw przez wbudowaną komendę:
+```
+notebooklm skill install
+```
+
+Jeśli nie zadziała — przez npx (wymaga Node.js ≥ 18):
+```
+npx skills add teng-lin/notebooklm-py
+```
+
+Weryfikacja:
+```
+notebooklm skill list
+```
+
+Jeśli skill widoczny na liście — przejdź dalej.
+
+## KROK 7 — Zainstaluj skill Obsidian
 
 Poinformuj użytkownika:
 > Teraz zainstalujemy skill do Obsidian, który pozwoli agentowi bezpośrednio tworzyć i zarządzać notatkami w Twoim vault'cie.
@@ -80,11 +102,11 @@ node --version
 Jeśli brak Node.js — poinformuj użytkownika:
 > Node.js możesz pobrać bezpłatnie ze strony nodejs.org (wersja LTS). Po instalacji wróć tutaj i wpisz `/setup` ponownie.
 
-Po instalacji skilla poinformuj użytkownika:
-> Skill Obsidian zainstalowany! Musisz teraz zrestartować Claude Code, aby skill został załadowany.
+Po instalacji obu skilli poinformuj użytkownika:
+> Oba skille zainstalowane! Musisz teraz zrestartować Claude Code, aby zostały załadowane.
 > 1. Wpisz `/exit`
 > 2. Otwórz Claude Code ponownie w tym samym folderze
-> 3. Wróć do konfiguracji — wpisz `/setup` (pozostałe kroki zostaną pominięte)
+> 3. Wróć do konfiguracji — wpisz `/setup` (już wykonane kroki zostaną pominięte)
 
 ## Po zakończeniu wszystkich kroków
 
