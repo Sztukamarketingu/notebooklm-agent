@@ -57,6 +57,35 @@ Uruchom:
 python3 scripts/login.py
 ```
 
-## Po zakończeniu
+## KROK 6 — Zainstaluj skill Obsidian
+
+Poinformuj użytkownika:
+> Teraz zainstalujemy skill do Obsidian, który pozwoli agentowi bezpośrednio tworzyć i zarządzać notatkami w Twoim vault'cie.
+
+Spróbuj najpierw przez Claude Code:
+```
+/plugin install obsidian@obsidian-skills
+```
+
+Jeśli komenda nie zadziała (błąd lub brak pluginu) — spróbuj przez npx (wymaga Node.js ≥ 18):
+```
+npx skills add git@github.com:kepano/obsidian-skills.git
+```
+
+Sprawdź czy Node.js jest zainstalowany przed uruchomieniem npx:
+```
+node --version
+```
+
+Jeśli brak Node.js — poinformuj użytkownika:
+> Node.js możesz pobrać bezpłatnie ze strony nodejs.org (wersja LTS). Po instalacji wróć tutaj i wpisz `/setup` ponownie.
+
+Po instalacji skilla poinformuj użytkownika:
+> Skill Obsidian zainstalowany! Musisz teraz zrestartować Claude Code, aby skill został załadowany.
+> 1. Wpisz `/exit`
+> 2. Otwórz Claude Code ponownie w tym samym folderze
+> 3. Wróć do konfiguracji — wpisz `/setup` (pozostałe kroki zostaną pominięte)
+
+## Po zakończeniu wszystkich kroków
 
 Poinformuj użytkownika że setup jest gotowy i zaproponuj `/research` aby zacząć budować pierwszą bazę wiedzy.
