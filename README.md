@@ -86,7 +86,7 @@ Ty:    /research
 Agent: Czego będziemy szukać?
 Ty:    strategie marketingu w social media
 Agent: Znalazłem 10 wideo. Tworzę notatnik "strategie marketingu – 2024-04-07"...
-       [1/10] ✓ "Social Media Strategy 2024" – Neil Patel
+       [1/10] ✓ "Social Media Strategy 2026" – Neil Patel
        [2/10] ✓ "Content Marketing Masterclass" – HubSpot
        ...
        Gotowe! 9/10 wideo dodanych do NotebookLM.
