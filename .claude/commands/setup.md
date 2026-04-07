@@ -108,6 +108,29 @@ Po instalacji obu skilli poinformuj użytkownika:
 > 2. Otwórz Claude Code ponownie w tym samym folderze
 > 3. Wróć do konfiguracji — wpisz `/setup` (już wykonane kroki zostaną pominięte)
 
+## KROK 8 — Zainstaluj komendy globalnie
+
+Poinformuj użytkownika:
+> Ostatni krok! Skopiuję komendy agenta do globalnego folderu Claude Code — dzięki temu będziesz mógł używać `/research`, `/compare` i pozostałych komend z **dowolnego folderu**, nie tylko z tego projektu.
+
+Uruchom:
+```
+python3 scripts/install_global.py
+```
+
+Jeśli się powiedzie — poinformuj:
+> Komendy zainstalowane globalnie! Od teraz możesz otworzyć Claude Code gdziekolwiek i wpisać `/research` — agent zawsze będzie dostępny.
+
+Jeśli błąd — powiedz użytkownikowi że komendy działają lokalnie (w tym folderze) i można wrócić do tego kroku później.
+
 ## Po zakończeniu wszystkich kroków
 
-Poinformuj użytkownika że setup jest gotowy i zaproponuj `/research` aby zacząć budować pierwszą bazę wiedzy.
+Podsumuj co zostało zainstalowane:
+- Python + biblioteki (notebooklm-py, youtube-search-python)
+- Przeglądarka Chromium (logowanie do NotebookLM)
+- Skill NotebookLM — globalny
+- Skill Obsidian — globalny
+- Komendy agenta — globalne (dostępne wszędzie)
+
+Następnie zaproponuj pierwszą sesję:
+> Wszystko gotowe! Wpisz `/research` żeby zbudować pierwszą bazę wiedzy — możesz to zrobić teraz lub w dowolnym momencie, z dowolnego folderu.
